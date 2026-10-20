@@ -3,72 +3,143 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NOM DU PROJET</title>
-  <meta name="description" content="Projet M1 MIAGE Apprentissage">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <meta name="theme-color" content="#11111b">
+  <meta name="description" content="Revive — projet M1 MIAGE d'aide à la décision pour la collecte et le réemploi d'objets.">
+  <title>Revive — Réemploi intelligent</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!--
-    PAGE DE PROJET publiée sur GitHub Pages à chaque push sur main (workflow pages.yml).
-    À compléter par l'équipe : remplacer les textes entre crochets, ORG/REPO, et une carte par feature.
-    dossier.pdf et part-ia.svg sont ajoutés automatiquement à la publication.
-  -->
   <header class="hero">
-    <div class="contenu">
-      <p class="sur-titre">Projet M1 MIAGE Apprentissage</p>
-      <h1>NOM DU PROJET</h1>
-      <p class="accroche">[Une phrase qui dit quel problème le projet résout, et pour qui.]</p>
-      <nav class="actions">
-        <a class="bouton" href="dossier.pdf">Dossier de projet (PDF)</a>
-        <a class="bouton secondaire" href="https://github.com/ORG/REPO">Code source</a>
-        <a class="bouton secondaire" href="https://github.com/ORG/REPO/releases">Versions</a>
-      </nav>
+    <nav class="nav container" aria-label="Navigation principale">
+      <a class="brand" href="#accueil"><span class="brand-mark">R</span> Revive</a>
+      <div class="nav-links">
+        <a href="#projet">Le projet</a>
+        <a href="#fonctionnalites">Fonctionnalités</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#equipe">Équipe</a>
+      </div>
+    </nav>
+    <div class="hero-content container" id="accueil">
+      <p class="eyebrow">PROJET M1 MIAGE APPRENTISSAGE · ÉQUIPE DE 5</p>
+      <h1>Revive<span>.</span></h1>
+      <div class="accent-line"></div>
+      <p class="lead">Donner une seconde vie aux objets grâce à une collecte mieux organisée et à une redistribution adaptée aux besoins des associations.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="https://github.com/Moh-svg04/reUseAi-projet-m1-miage/blob/main/doc/dossier.pdf">Dossier de projet (PDF)</a>
+        <a class="button button-secondary" href="https://github.com/Moh-svg04/reUseAi-projet-m1-miage">Code source</a>
+        <a class="button button-secondary" href="https://github.com/Moh-svg04/reUseAi-projet-m1-miage/releases">Versions</a>
+      </div>
+      <p class="note">Projet en conception : les fonctionnalités présentées sont des objectifs prévisionnels, pas des fonctionnalités déclarées comme livrées.</p>
     </div>
   </header>
 
-  <main class="contenu">
-    <section>
-      <h2>Le projet</h2>
-      <p>[Le problème, ce qui existe déjà, ce que le projet apporte de nouveau. Quelques phrases suffisent.]</p>
-    </section>
-
-    <section>
-      <h2>Fonctionnalités</h2>
-      <div class="grille">
-        <!-- une carte par feature livrée -->
-        <article class="carte">
-          <p class="version">v0.1.0</p>
-          <h3>[Nom de la feature]</h3>
-          <p>[Ce qu'elle permet à l'utilisateur.]</p>
-          <p class="algo">Algorithme : [nom]</p>
-          <p class="auteur">[Prénom Nom]</p>
-        </article>
+  <main>
+    <section class="section container" id="projet">
+      <p class="eyebrow">01 — LE PROJET</p>
+      <h2>La logistique du réemploi, mieux coordonnée.</h2>
+      <p class="section-intro">Revive vise à aider les associations et les équipes de collecte à organiser des campagnes à domicile, préparer les chargements, planifier les tournées et répartir les objets récupérés en fonction des besoins.</p>
+      <div class="pill-row">
+        <span class="pill">Collectes à domicile</span>
+        <span class="pill">Capacité poids / volume</span>
+        <span class="pill">Tournées</span>
+        <span class="pill">Redistribution</span>
+        <span class="pill">Aide à la décision</span>
+      </div>
+      <div class="callout">
+        <strong>Notre idée centrale</strong>
+        <p>Passer d'une gestion manuelle difficile à un plan de collecte et de redistribution qui tient compte simultanément des adresses, des véhicules, des contraintes logistiques et des besoins des associations.</p>
       </div>
     </section>
 
-    <section>
-      <h2>Architecture</h2>
-      <p>Front web → API REST (Spring Boot) → back Java en architecture hexagonale → PostgreSQL. [À adapter.]</p>
+    <section class="section section-muted" id="fonctionnalites">
+      <div class="container">
+        <p class="eyebrow">02 — PLAN PRÉVISIONNEL</p>
+        <h2>Fonctionnalités envisagées</h2>
+        <p class="section-intro">Les algorithmes et les échéances ci-dessous sont des propositions de départ. Ils pourront être ajustés pendant la conception et le développement.</p>
+
+        <h3 class="release-title"><span class="release-dot"></span> v0.1.0 <span>· prévue pour le 24/11</span></h3>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-number">01</span><p class="feature-owner">Jorys KANCEL</p><h4>Priorisation des lots</h4><p class="feature-desc">Classer les lots de collecte selon plusieurs critères métier pondérés.</p><p class="algorithm">Score multicritère pondéré</p></article>
+          <article class="feature-card"><span class="feature-number">02</span><p class="feature-owner">SALEKHA FALL</p><h4>Regroupement géographique</h4><p class="feature-desc">Former des groupes d'adresses proches pour préparer les campagnes.</p><p class="algorithm">DBSCAN</p></article>
+          <article class="feature-card"><span class="feature-number">03</span><p class="feature-owner">SARAH METREF</p><h4>Chargement des véhicules</h4><p class="feature-desc">Composer des chargements compatibles avec les limites de poids et de volume.</p><p class="algorithm">Bin packing heuristique</p></article>
+          <article class="feature-card"><span class="feature-number">04</span><p class="feature-owner">CAMILIA SABA</p><h4>Affectation initiale</h4><p class="feature-desc">Proposer une première correspondance entre objets disponibles et besoins.</p><p class="algorithm">Graphe biparti / flot</p></article>
+          <article class="feature-card"><span class="feature-number">05</span><p class="feature-owner">MOHAMED GUEYE</p><h4>Planification des créneaux</h4><p class="feature-desc">Placer les collectes dans des créneaux compatibles avec les contraintes.</p><p class="algorithm">Ordonnancement glouton</p></article>
+        </div>
+
+        <h3 class="release-title"><span class="release-dot"></span> v0.2.0 <span>· prévue pour le 08/12</span></h3>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-number">06</span><p class="feature-owner">Jorys KANCEL</p><h4>Optimisation des tournées</h4><p class="feature-desc">Améliorer l'ordre de visite pour limiter les distances parcourues.</p><p class="algorithm">Amélioration locale 2-opt</p></article>
+          <article class="feature-card"><span class="feature-number">07</span><p class="feature-owner">SALEKHA FALL</p><h4>Affectation aux équipes</h4><p class="feature-desc">Associer les tournées aux équipes selon les contraintes et disponibilités.</p><p class="algorithm">Affectation pondérée</p></article>
+          <article class="feature-card"><span class="feature-number">08</span><p class="feature-owner">SARAH METREF</p><h4>Gestion des imprévus</h4><p class="feature-desc">Réorganiser un plan lorsqu'un véhicule ou un point devient indisponible.</p><p class="algorithm">Réoptimisation locale</p></article>
+          <article class="feature-card"><span class="feature-number">09</span><p class="feature-owner">CAMILIA SABA</p><h4>Répartition globale du stock</h4><p class="feature-desc">Répartir les objets entre associations en tenant compte des besoins.</p><p class="algorithm">Flot de coût minimum</p></article>
+          <article class="feature-card"><span class="feature-number">10</span><p class="feature-owner">MOHAMED GUEYE</p><h4>Équilibrage des charges</h4><p class="feature-desc">Limiter les écarts de charge de travail entre les équipes.</p><p class="algorithm">Recherche locale par échanges</p></article>
+        </div>
+
+        <h3 class="release-title"><span class="release-dot"></span> v1.0.0 <span>· prévue pour le 19/01</span></h3>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-number">11</span><p class="feature-owner">Jorys KANCEL</p><h4>Comparaison de plans</h4><p class="feature-desc">Comparer plusieurs plans selon des objectifs potentiellement contradictoires.</p><p class="algorithm">Dominance de Pareto</p></article>
+          <article class="feature-card"><span class="feature-number">12</span><p class="feature-owner">SALEKHA FALL</p><h4>Sélection des objets à réparer</h4><p class="feature-desc">Choisir les objets à réparer sous une contrainte de ressources.</p><p class="algorithm">Programmation dynamique, type sac à dos</p></article>
+          <article class="feature-card"><span class="feature-number">13</span><p class="feature-owner">SARAH METREF</p><h4>Détection de lots atypiques</h4><p class="feature-desc">Repérer les valeurs inhabituelles qui méritent une vérification.</p><p class="algorithm">Règle statistique IQR</p></article>
+          <article class="feature-card"><span class="feature-number">14</span><p class="feature-owner">CAMILIA SABA</p><h4>Estimation des besoins</h4><p class="feature-desc">Étudier la prédiction des quantités demandées par catégorie, si les données le permettent.</p><p class="algorithm">Piste de régression supervisée / ML</p></article>
+          <article class="feature-card"><span class="feature-number">15</span><p class="feature-owner">MOHAMED GUEYE</p><h4>Évaluation d'un plan</h4><p class="feature-desc">Présenter les contraintes respectées ou violées et des indicateurs de qualité.</p><p class="algorithm">Vérification des contraintes et calcul d'indicateurs</p></article>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Équipe</h2>
-      <ul class="equipe">
-        <li><a href="https://github.com/compte">[Prénom Nom]</a></li>
-      </ul>
+    <section class="section container" id="architecture">
+      <p class="eyebrow">03 — CONCEPTION TECHNIQUE</p>
+      <h2>Architecture envisagée</h2>
+      <p class="section-intro">Une architecture en couches avec un back-end organisé selon les principes de l'architecture hexagonale.</p>
+      <div class="architecture-flow" aria-label="Flux de l'architecture">
+        <div class="architecture-node"><span>01</span><strong>Front web</strong><small>HTML · CSS · JavaScript</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="architecture-node"><span>02</span><strong>API REST</strong><small>Spring Boot · OpenAPI</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="architecture-node"><span>03</span><strong>Back-end</strong><small>Java 21 · Hexagonal</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="architecture-node"><span>04</span><strong>Base de données</strong><small>PostgreSQL · Flyway</small></div>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-item"><strong>Tests</strong><span>JUnit 5 · AssertJ · ArchUnit</span></div>
+        <div class="tech-item"><strong>Qualité</strong><span>JaCoCo · Codecov · SonarCloud</span></div>
+        <div class="tech-item"><strong>Conteneurs</strong><span>Docker Compose</span></div>
+        <div class="tech-item"><strong>Cartographie</strong><span>OpenStreetMap · service de routage à choisir</span></div>
+      </div>
+      <p class="small-note">Les choix techniques sont ceux envisagés à ce stade et pourront évoluer. Le modèle de Machine Learning reste une piste à évaluer, selon les données disponibles.</p>
     </section>
 
-    <section>
+    <section class="section section-muted" id="equipe">
+      <div class="container">
+        <p class="eyebrow">04 — L'ÉQUIPE</p>
+        <h2>Cinq membres, un objectif commun.</h2>
+        <p class="section-intro">Projet M1 MIAGE Apprentissage. La répartition des fonctionnalités est une proposition initiale à valider collectivement.</p>
+        <div class="team-grid">
+          <a class="team-card" href="https://github.com/Sinie-Kun"><span class="avatar">JK</span><strong>Jorys KANCEL</strong><small>@Sinie-Kun</small></a>
+          <a class="team-card" href="https://github.com/salekhaf"><span class="avatar">SF</span><strong>SALEKHA FALL</strong><small>@salekhaf</small></a>
+          <a class="team-card" href="https://github.com/SarahMETREF"><span class="avatar">SM</span><strong>SARAH METREF</strong><small>@SarahMETREF</small></a>
+          <a class="team-card" href="https://github.com/fromwonderland"><span class="avatar">CS</span><strong>CAMILIA SABA</strong><small>@fromwonderland</small></a>
+          <a class="team-card" href="https://github.com/Moh-svg04"><span class="avatar">MG</span><strong>MOHAMED GUEYE</strong><small>@Moh-svg04</small></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="ia-humain">
+      <p class="eyebrow">05 — TRANSPARENCE</p>
       <h2>Part IA / part humaine</h2>
-      <p>Part de l'IA générative déclarée par compétence, comparée aux plafonds que l'équipe s'est fixés.</p>
-      <img class="araignee" src="part-ia.svg" alt="Graphe en araignée de la part de l'IA par compétence">
+      <p class="section-intro">L'équipe prévoit de déclarer honnêtement l'usage de l'IA générative par compétence. Les valeurs devront refléter le travail réellement effectué et les règles fixées avec l'équipe enseignante.</p>
+      <div class="callout">
+        <strong>Notre principe</strong>
+        <p>L'IA peut aider à explorer des idées, expliquer des algorithmes ou relire la documentation. Les membres de l'équipe restent responsables de leurs choix, de la compréhension du code, des tests et de la validation des résultats.</p>
+      </div>
+      <p class="small-note">Le graphique de répartition pourra être ajouté ici lorsque les valeurs déclarées et le fichier correspondant seront prêts.</p>
     </section>
   </main>
 
-  <footer class="contenu">
-    <p>NOM DU PROJET · M1 MIAGE Apprentissage · <a href="https://github.com/ORG/REPO">ORG/REPO</a></p>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#accueil"><span class="brand-mark">R</span> Revive</a>
+      <p>Projet M1 MIAGE Apprentissage · <a href="https://github.com/Moh-svg04/reUseAi-projet-m1-miage">Dépôt GitHub</a></p>
+    </div>
   </footer>
 </body>
 </html>

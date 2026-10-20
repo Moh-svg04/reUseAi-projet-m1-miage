@@ -16,34 +16,40 @@ date: 20 octobre 2026
 
 | Membre | Compte GitHub | Email des commits (`git config user.email`) |
 |---|---|---|
-| Jorys KANCEL | [`@Sinie-Kun`](https://github.com/Sinie-Kun) | À compléter |
+| Jorys KANCEL | [`@Sinie-Kun`](https://github.com/Sinie-Kun) | jorys.kancel@gmail.com |
 | SALEKHA FALL | [`@salekhaf`](https://github.com/salekhaf) | zulekhfall@gmail.com |
-| SARAH METREF | [`@SarahMETREF`](https://github.com/SarahMETREF) | À compléter |
+| SARAH METREF | [`@SarahMETREF`](https://github.com/SarahMETREF) | metrefsarah@gmail.com |
 | CAMILIA SABA | [`@fromwonderland`](https://github.com/fromwonderland) | camilia200@outlook.fr |
 | MOHAMED GUEYE | [`@Moh-svg04`](https://github.com/Moh-svg04) | gueyemoe04@gmail.com |
 
- **Dépôt** : <https://github.com/Moh-svg04/reUseAi-projet-m1-miage> · **page de projet** : <https://Moh-svg04.github.io/reUseAi-projet-m1-miage/>.
+ **Dépôt** : <https://github.com/Moh-svg04/reUseAi-projet-m1-miage> ·
+ **page de projet** : <https://Moh-svg04.github.io/reUseAi-projet-m1-miage/>.
 
 # Projet et caractère innovant
 
-**Revive** est une application  d'aide à la décision destinée aux associations et aux équipes de collecte qui organisent le réemploi d'objets. Elle vise à coordonner des campagnes de collecte à domicile, à prendre en compte les capacités des véhicules et à aider à répartir les objets récupérés entre les associations selon leurs besoins.
+**Revive** est une application d'aide à la décision destinée aux associations et aux équipes de collecte qui organisent le réemploi d'objets. Elle vise à coordonner des campagnes de collecte à domicile, à prendre en compte les capacités des véhicules et à aider à répartir les objets récupérés entre les associations selon leurs besoins.
 
 Le problème traité ne consiste pas seulement à enregistrer des objets : il faut choisir quels lots collecter, regrouper les adresses, construire des chargements compatibles avec les capacités en poids et en volume, planifier les tournées et réagir aux imprévus. Une organisation manuelle devient difficile lorsque plusieurs contraintes doivent être respectées simultanément.
 
-L'entité pivot est le **lot d'objets**, rattaché à une campagne et caractérisé notamment par sa catégorie, son état, son poids, son volume, sa localisation et son statut. Les campagnes, véhicules, équipes, besoins des associations, tournées et affectations complètent le modèle métier.
+L'entité pivot envisagée est le **lot d'objets**, rattaché à une campagne et caractérisé notamment par sa catégorie, son état, son poids, son volume, sa localisation et son statut. Les campagnes, véhicules, équipes, besoins des associations, tournées et affectations compléteraient le modèle métier.
 
-Le caractère innovant de Revive repose sur l'intégration d'algorithmes explicables dans un parcours applicatif complet : priorisation multicritère, regroupement géographique, chargement sous contraintes, optimisation de tournées et affectation des objets. 
+Le caractère innovant de Revive reposerait sur l'intégration d'algorithmes d'aide à la décision dans un parcours applicatif complet : priorisation multicritère, regroupement géographique, chargement sous contraintes, optimisation des tournées et affectation des objets.
 
-Le géocodage sera initialement renseigné manuellement. Le calcul des distances routières s'appuiera sur un service de routage compatible avec les données OpenStreetMap. Les appels externes seront isolés derrière un adaptateur et les tests utiliseront des données déterministes afin de rester reproductibles.
+L'équipe envisage également d'étudier une composante de **Machine Learning** afin d'estimer les besoins futurs des associations à partir de l'historique des demandes, des collectes et des redistributions. Un modèle de régression supervisée pourrait être envisagé pour prédire les quantités demandées par catégorie d'objets. Sa pertinence dépendrait toutefois de la disponibilité et de la qualité des données. En l'absence de données historiques suffisantes, des données synthétiques pourraient servir aux premiers essais, sans permettre à elles seules de conclure aux performances du modèle en conditions réelles.
+
+Ces propositions constituent des pistes de conception qui pourront être précisées ou adaptées au cours du projet. Les algorithmes retenus devront notamment tenir compte des contraintes métier, de la faisabilité des solutions proposées et de la possibilité pour les responsables de comprendre et de modifier les résultats.
+
+Le géocodage pourrait initialement être renseigné manuellement. Le calcul des distances routières s'appuierait sur un service de routage compatible avec les données OpenStreetMap. Les appels externes seraient isolés derrière un adaptateur et les tests pourraient utiliser des données déterministes afin de rester reproductibles.
 
 # Scénarios d'usage
 
-- **En tant que responsable de campagne**, je veux classer les lots à collecter selon des critères pondérés, afin de décider quelles collectes traiter en priorité.
-- **En tant que responsable logistique**, je veux regrouper les adresses proches et constituer des chargements respectant le poids et le volume autorisés, afin de préparer des collectes réalisables.
-- **En tant que membre d'une équipe de collecte**, je veux consulter une tournée ordonnée selon les distances routières, afin de limiter les déplacements inutiles.
-- **En tant que responsable d'association**, je veux obtenir une proposition de répartition des objets en fonction des besoins et des stocks disponibles, afin de mieux répondre aux demandes des bénéficiaires.
-- **En tant que responsable logistique**, je veux recalculer un plan lorsqu'un véhicule ou un point de collecte devient indisponible, afin de limiter les conséquences de l'imprévu.
-- **En tant qu'administrateur**, je veux consulter les contraintes violées et les indicateurs d'un plan, afin de vérifier sa faisabilité avant de le valider.
+- **En tant que responsable de campagne**, je veux pouvoir classer les lots à collecter selon des critères pondérés, afin de décider quelles collectes traiter en priorité.
+- **En tant que responsable logistique**, je veux pouvoir regrouper les adresses proches et constituer des chargements respectant le poids et le volume autorisés, afin de préparer des collectes réalisables.
+- **En tant que membre d'une équipe de collecte**, je veux pouvoir consulter une tournée ordonnée selon les distances routières, afin de limiter les déplacements inutiles.
+- **En tant que responsable d'association**, je veux pouvoir obtenir une proposition de répartition des objets en fonction des besoins et des stocks disponibles, afin de mieux répondre aux demandes des bénéficiaires.
+- **En tant que responsable d'association**, je veux pouvoir consulter une estimation des besoins futurs par catégorie d'objets, si les données disponibles le permettent, afin d'anticiper les prochaines campagnes et d'adapter les priorités de redistribution.
+- **En tant que responsable logistique**, je veux pouvoir recalculer un plan lorsqu'un véhicule ou un point de collecte devient indisponible, afin de limiter les conséquences de l'imprévu.
+- **En tant qu'administrateur**, je veux pouvoir consulter les contraintes violées et les indicateurs d'un plan, afin d'examiner sa faisabilité avant de le valider.
 
 # Plan des features
 

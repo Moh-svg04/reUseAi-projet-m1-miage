@@ -1,6 +1,6 @@
+
 name: Documentation
 
-# Vérifie à chaque modification que la documentation se compile, et la met à disposition en artefact.
 on:
   push:
     paths: ['doc/**', 'documentation.md', 'site/**']
@@ -10,16 +10,35 @@ on:
 
 jobs:
   pdf:
+    # Ne pas pousser de commit depuis une pull request
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
       - uses: ./.github/actions/outils-doc
-      - name: "Compilation (contrat : make -C doc produit doc/dossier.pdf)"
+
+      - name: Compiler le PDF
         run: make -B -C doc && make -B -C doc documentation
+
       - name: Vérifier le PDF généré
+        run: test -s doc/dossier.pdf
+
+      - name: Enregistrer le PDF dans le dépôt
         run: |
-          test -f doc/dossier.pdf
-          ls -lh doc/dossier.pdf
+          git add doc/dossier.pdf
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "docs: mise à jour automatique du PDF"
+            git push
+          fi
+
       - uses: actions/upload-artifact@v4
         with:
           name: documentation

@@ -1,5 +1,5 @@
 ---
-title: "ReUseAI"
+title: "Revive"
 subtitle: "Dossier de lancement — M1 MIAGE Apprentissage — v0.1.0-SNAPSHOT"
 author:
   - Jorys KANCEL, SALEKHA FALL, SARAH METREF, CAMILIA SABA, MOHAMED GUEYE
@@ -17,22 +17,22 @@ date: 20 octobre 2026
 | Membre | Compte GitHub | Email des commits (`git config user.email`) |
 |---|---|---|
 | Jorys KANCEL | [`@Sinie-Kun`](https://github.com/Sinie-Kun) | À compléter |
-| SALEKHA FALL | [`@salekhaf`](https://github.com/salekhaf) | À compléter |
+| SALEKHA FALL | [`@salekhaf`](https://github.com/salekhaf) | zulekhfall@gmail.com |
 | SARAH METREF | [`@SarahMETREF`](https://github.com/SarahMETREF) | À compléter |
-| CAMILIA SABA | [`@fromwonderland`](https://github.com/fromwonderland) | À compléter |
-| MOHAMED GUEYE | [`@Moh-svg04`](https://github.com/Moh-svg04) | À compléter |
+| CAMILIA SABA | [`@fromwonderland`](https://github.com/fromwonderland) | camilia200@outlook.fr |
+| MOHAMED GUEYE | [`@Moh-svg04`](https://github.com/Moh-svg04) | gueyemoe04@gmail.com |
 
-Chaque membre vérifiera que son email Git est associé à son compte GitHub, pour que ses commits lui soient correctement attribués. **Dépôt** : <https://github.com/Moh-svg04/reUseAi-projet-m1-miage> · **page de projet** : <https://Moh-svg04.github.io/reUseAi-projet-m1-miage/>.
+ **Dépôt** : <https://github.com/Moh-svg04/reUseAi-projet-m1-miage> · **page de projet** : <https://Moh-svg04.github.io/reUseAi-projet-m1-miage/>.
 
 # Projet et caractère innovant
 
-**ReUseAI** est une application web d'aide à la décision destinée aux associations et aux équipes de collecte qui organisent le réemploi d'objets. Elle vise à coordonner des campagnes de collecte à domicile, à prendre en compte les capacités des véhicules et à aider à répartir les objets récupérés entre les associations selon leurs besoins.
+**Revive** est une application  d'aide à la décision destinée aux associations et aux équipes de collecte qui organisent le réemploi d'objets. Elle vise à coordonner des campagnes de collecte à domicile, à prendre en compte les capacités des véhicules et à aider à répartir les objets récupérés entre les associations selon leurs besoins.
 
 Le problème traité ne consiste pas seulement à enregistrer des objets : il faut choisir quels lots collecter, regrouper les adresses, construire des chargements compatibles avec les capacités en poids et en volume, planifier les tournées et réagir aux imprévus. Une organisation manuelle devient difficile lorsque plusieurs contraintes doivent être respectées simultanément.
 
 L'entité pivot est le **lot d'objets**, rattaché à une campagne et caractérisé notamment par sa catégorie, son état, son poids, son volume, sa localisation et son statut. Les campagnes, véhicules, équipes, besoins des associations, tournées et affectations complètent le modèle métier.
 
-Le caractère innovant de ReUseAI repose sur l'intégration d'algorithmes explicables dans un parcours applicatif complet : priorisation multicritère, regroupement géographique, chargement sous contraintes, optimisation de tournées et affectation des objets. Les propositions seront présentées aux responsables, qui pourront les examiner et les valider. Les résultats seront évalués au moyen de contraintes vérifiables et comparés, lorsque cela est pertinent, à des solutions de référence simples.
+Le caractère innovant de Revive repose sur l'intégration d'algorithmes explicables dans un parcours applicatif complet : priorisation multicritère, regroupement géographique, chargement sous contraintes, optimisation de tournées et affectation des objets. 
 
 Le géocodage sera initialement renseigné manuellement. Le calcul des distances routières s'appuiera sur un service de routage compatible avec les données OpenStreetMap. Les appels externes seront isolés derrière un adaptateur et les tests utiliseront des données déterministes afin de rester reproductibles.
 
@@ -49,11 +49,11 @@ Le géocodage sera initialement renseigné manuellement. Le calcul des distances
 
 Une feature a un effet sur **la BD, le back, l'API REST et le front**. Chaque feature est portée par **une seule personne** et repose sur **un algorithme identifié**. La répartition ci-dessous est une proposition initiale tournante : elle devra être validée par l'équipe et chaque fiche devra préciser les contraintes, les cas limites et la complexité de l'algorithme réellement implémenté.
 
-| Version | Jorys KANCEL | SALEKHA FALL | SARAH METREF | CAMILIA SABA | MOHAMED GUEYE |
-|---|---|---|---|---|---|
-| **v0.1.0 — 24/11** | Priorisation des lots — score multicritère pondéré | Regroupement géographique — DBSCAN | Chargements sous contraintes — bin packing multidimensionnel heuristique | Affectation initiale objets-besoins — graphe biparti / flot | Planification des créneaux — ordonnancement glouton sous contraintes |
-| **v0.2.0 — 08/12** | Optimisation des tournées — tournée initiale puis amélioration 2-opt | Affectation des tournées aux équipes — affectation pondérée | Réorganisation après imprévu — réoptimisation locale | Répartition globale du stock — flot de coût minimum | Équilibrage des charges de travail — recherche locale par échanges |
-| **v1.0.0 — 19/01** | Comparaison de plans — dominance de Pareto | Sélection des objets à réparer — programmation dynamique type sac à dos | Détection de lots atypiques — méthode statistique IQR | Estimation des besoins — moyenne mobile pondérée | Évaluation de la qualité d'un plan — vérification des contraintes et calcul d'indicateurs |
+| Version | Membre 1 | Membre 2 | Membre 3 | Membre 4 |
+|-----|---------|---------|---------|---------|
+| **v0.1.0** 24/11 | Feature — *algorithme* | | | |
+| **v0.2.0** 08/12 | | | | |
+| **v1.0.0** 19/01 | | | | |
 
 Les complexités seront documentées dans les fiches de features en fonction des structures de données et de l'implémentation choisies. Les fonctionnalités dépendant de données historiques seront évaluées avec prudence : les jeux synthétiques permettent de tester l'algorithme, mais ne suffisent pas à revendiquer une précision prédictive réelle. La distinction entre fonctionnalités devra être justifiée par des objectifs et contraintes différents, notamment pour l'affectation initiale et la répartition globale, ainsi que pour la comparaison et la validation des plans.
 
@@ -83,7 +83,6 @@ Le modèle métier commun s'organise autour du lot d'objets, lié à une campagn
 - conventions **REST** et règles de sécurité **OWASP** ;
 - *quality gate* SonarCloud au vert.
 
-Les algorithmes seront placés dans le domaine Java, indépendamment de Spring et des services externes. Les appels au service de routage seront encapsulés derrière un port et un adaptateur. Les tests utiliseront des données synthétiques reproductibles et des réponses simulées pour ne pas dépendre d'un service externe. Les secrets de configuration ne seront pas versionnés.
 
 # Démarche pour chaque feature
 
@@ -99,7 +98,7 @@ Les étapes s'enchaînent **dans cet ordre, sans en sauter** : on ne commence un
 
 # Protocole d'usage de l'IA
 
-**Principe : l'IA assiste, l'humain reste l'auteur.** On ne laisse jamais l'IA tout faire sans comprendre : tout ce qui est commité a été relu et compris par son auteur, capable de l'expliquer, de le modifier et de le refaire sans aide. Les consignes des assistants de code sont versionnées dans `CLAUDE.md`.
+**Principe : l'IA assiste, l'humain reste l'auteur.** On ne laisse jamais l'IA tout faire sans comprendre : tout ce qui est comité a été relu et compris par son auteur, capable de l'expliquer, de le modifier et de le refaire sans aide. Les consignes des assistants sont ce  dans `CLAUDE.md`.
 
 | Activité | Ce que fait l'IA | Ce que fait l'humain |
 |---|---|---|
@@ -110,9 +109,7 @@ Les étapes s'enchaînent **dans cet ordre, sans en sauter** : on ne commence un
 | CI/CD, conteneurisation | Peut générer workflows et Dockerfile | Comprend chaque étape, vérifie l'exécution, gère les secrets |
 | Documentation | Aide à rédiger et mettre en forme | Valide le contenu, vérifie les faits |
 
-**Interdits.** Commiter du code qu'on ne comprend pas ; confier des secrets ou des données personnelles à l'IA ; commiter sous une autre identité ; présenter comme humain un travail de l'IA.
 
-**Traçabilité.** Section « Usage de l'IA » dans chaque pull request. Part de l'IA déclarée **par compétence** (haut niveau / bas niveau) dans un graphe en araignée, comparée à un plafond que l'équipe s'autorise (annexe). Les déclarations décriront le travail réellement effectué, sans valeurs fictives.
 
 # Annexe : part IA / part humaine {#annexe-part-ia}
 

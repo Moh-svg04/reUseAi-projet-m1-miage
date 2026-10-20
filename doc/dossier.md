@@ -118,4 +118,4 @@ Les étapes s'enchaînent **dans cet ordre, sans en sauter** : on ne commence un
 
 ![](part-ia.svg){.araignee}
 
-Valeurs dans `doc/part-ia.json`, régénérées à chaque compilation. <!-- Commenter honnêtement les dépassements de plafond. -->  
+Valeurs dans `doc/part-ia.json`, régénérées à chaque compilation. <!-- Commenter honnêtement les dépassements de plafond. -->    

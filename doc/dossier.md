@@ -22,34 +22,42 @@ date: 20 octobre 2026
 | CAMILIA SABA | [`@fromwonderland`](https://github.com/fromwonderland) | camilia200@outlook.fr |
 | MOHAMED GUEYE | [`@Moh-svg04`](https://github.com/Moh-svg04) | gueyemoe04@gmail.com |
 
- **Dépôt** : <https://github.com/Moh-svg04/reUseAi-projet-m1-miage> ·
+ **Dépôt** : <https://github.com/Moh-svg04/reUseAi-projet-m1-miage> 
  **page de projet** : <https://Moh-svg04.github.io/reUseAi-projet-m1-miage/>.
 
-# Projet et caractère innovant
+## 02 Projet et caractère innovant
 
-**Revive** est une application d'aide à la décision destinée aux associations et aux équipes de collecte qui organisent le réemploi d'objets. Elle vise à coordonner des campagnes de collecte à domicile, à prendre en compte les capacités des véhicules et à aider à répartir les objets récupérés entre les associations selon leurs besoins.
+**Le problème.** Les associations récupèrent des objets auprès des particuliers, mais organiser les collectes et redistribuer les objets peut être compliqué. Il faut choisir les adresses à visiter, organiser les tournées, respecter les capacités des véhicules et répartir les objets entre les associations selon leurs besoins.
 
-Le problème traité ne consiste pas seulement à enregistrer des objets : il faut choisir quels lots collecter, regrouper les adresses, construire des chargements compatibles avec les capacités en poids et en volume, planifier les tournées et réagir aux imprévus. Une organisation manuelle devient difficile lorsque plusieurs contraintes doivent être respectées simultanément.
+Revive vise à faciliter cette organisation en regroupant ces différentes étapes dans une même application. L'objectif est de mieux organiser les collectes et de donner une seconde vie aux objets en les orientant vers les associations qui en ont besoin.
 
-L'entité pivot envisagée est le **lot d'objets**, rattaché à une campagne et caractérisé notamment par sa catégorie, son état, son poids, son volume, sa localisation et son statut. Les campagnes, véhicules, équipes, besoins des associations, tournées et affectations compléteraient le modèle métier.
+**Ce qui est innovant :**
 
-Le caractère innovant de Revive reposerait sur l'intégration d'algorithmes d'aide à la décision dans un parcours applicatif complet : priorisation multicritère, regroupement géographique, chargement sous contraintes, optimisation des tournées et affectation des objets.
+- **L'optimisation plutôt que la simple gestion.** L'application ne sert pas seulement à enregistrer des objets et des adresses. Elle vise aussi à proposer des solutions : regrouper les collectes proches, organiser les tournées, préparer les chargements et répartir les objets selon les besoins des associations. Ces fonctionnalités pourront s'appuyer sur différents algorithmes d'optimisation.
 
-L'équipe envisage également d'étudier une composante de **Machine Learning** afin d'estimer les besoins futurs des associations à partir de l'historique des demandes, des collectes et des redistributions. Un modèle de régression supervisée pourrait être envisagé pour prédire les quantités demandées par catégorie d'objets. Sa pertinence dépendrait toutefois de la disponibilité et de la qualité des données. En l'absence de données historiques suffisantes, des données synthétiques pourraient servir aux premiers essais, sans permettre à elles seules de conclure aux performances du modèle en conditions réelles.
+- **L'utilisation du Machine Learning.** Nous souhaitons intégrer du Machine Learning pour estimer les besoins des associations selon les catégories d'objets. Par exemple, à partir des données disponibles, le modèle pourrait estimer les quantités de vêtements, de meubles ou de matériel informatique dont les associations pourraient avoir besoin. Ces estimations pourraient aider à mieux préparer la redistribution.
 
-Ces propositions constituent des pistes de conception qui pourront être précisées ou adaptées au cours du projet. Les algorithmes retenus devront notamment tenir compte des contraintes métier, de la faisabilité des solutions proposées et de la possibilité pour les responsables de comprendre et de modifier les résultats.
+- **Des fonctionnalités liées entre elles.** Les différentes étapes se complètent : le regroupement des adresses facilite l'organisation des tournées, les capacités des véhicules permettent de préparer les chargements et les besoins des associations aident à répartir les objets collectés.
 
-Le géocodage pourrait initialement être renseigné manuellement. Le calcul des distances routières s'appuierait sur un service de routage compatible avec les données OpenStreetMap. Les appels externes seraient isolés derrière un adaptateur et les tests pourraient utiliser des données déterministes afin de rester reproductibles.
+- **Une dimension solidaire et environnementale.** En facilitant la collecte et la redistribution, Revive cherche à favoriser le réemploi des objets et à limiter le gaspillage.
 
-# Scénarios d'usage
+**Ce qui existe déjà.** Il existe des outils pour calculer des itinéraires, gérer des stocks ou organiser des opérations logistiques. Revive souhaite réunir ces besoins dans une même application et associer l'optimisation logistique à une estimation des besoins grâce au Machine Learning.
 
-- **En tant que responsable de campagne**, je veux pouvoir classer les lots à collecter selon des critères pondérés, afin de décider quelles collectes traiter en priorité.
-- **En tant que responsable logistique**, je veux pouvoir regrouper les adresses proches et constituer des chargements respectant le poids et le volume autorisés, afin de préparer des collectes réalisables.
-- **En tant que membre d'une équipe de collecte**, je veux pouvoir consulter une tournée ordonnée selon les distances routières, afin de limiter les déplacements inutiles.
-- **En tant que responsable d'association**, je veux pouvoir obtenir une proposition de répartition des objets en fonction des besoins et des stocks disponibles, afin de mieux répondre aux demandes des bénéficiaires.
-- **En tant que responsable d'association**, je veux pouvoir consulter une estimation des besoins futurs par catégorie d'objets, si les données disponibles le permettent, afin d'anticiper les prochaines campagnes et d'adapter les priorités de redistribution.
-- **En tant que responsable logistique**, je veux pouvoir recalculer un plan lorsqu'un véhicule ou un point de collecte devient indisponible, afin de limiter les conséquences de l'imprévu.
-- **En tant qu'administrateur**, je veux pouvoir consulter les contraintes violées et les indicateurs d'un plan, afin d'examiner sa faisabilité avant de le valider.
+## 03 Scénarios d'usage
+
+En tant que responsable de collecte, je peux enregistrer les objets à récupérer et leurs adresses afin de préparer une campagne de collecte.
+
+En tant que responsable de collecte, je peux regrouper les adresses proches afin de faciliter l'organisation des déplacements.
+
+En tant que responsable logistique, je peux préparer les chargements des véhicules en tenant compte de leurs limites de poids et de volume.
+
+En tant que responsable logistique, je peux organiser les tournées afin de limiter les distances parcourues et de mieux planifier les collectes.
+
+En tant que responsable d'association, je peux renseigner les besoins de mon association afin de faciliter la répartition des objets collectés.
+
+En tant que responsable logistique, je peux comparer plusieurs propositions d'organisation afin de choisir celle qui répond le mieux aux contraintes de collecte et de redistribution.
+
+En tant que responsable d'association, je pourrais consulter une estimation des besoins futurs par catégorie d'objets afin d'anticiper les quantités nécessaires, grâce au modèle de Machine Learning envisagé.
 
 # Plan des features
 

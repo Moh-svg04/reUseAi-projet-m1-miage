@@ -25,7 +25,7 @@ date: 20 octobre 2026
  **Dépôt** : <https://github.com/Moh-svg04/reUseAi-projet-m1-miage> 
  **page de projet** : <https://Moh-svg04.github.io/reUseAi-projet-m1-miage/>.
 
-## 02 Projet et caractère innovant
+## Projet et caractère innovant
 
 **Le problème.** Les associations récupèrent des objets auprès des particuliers, mais organiser les collectes et redistribuer les objets peut être compliqué. Il faut choisir les adresses à visiter, organiser les tournées, respecter les capacités des véhicules et répartir les objets entre les associations selon leurs besoins.
 
@@ -43,7 +43,7 @@ Revive vise à faciliter cette organisation en regroupant ces différentes étap
 
 **Ce qui existe déjà.** Il existe des outils pour calculer des itinéraires, gérer des stocks ou organiser des opérations logistiques. Revive souhaite réunir ces besoins dans une même application et associer l'optimisation logistique à une estimation des besoins grâce au Machine Learning.
 
-## 03 Scénarios d'usage
+## Scénarios d'usage
 
 En tant que responsable de collecte, je peux enregistrer les objets à récupérer et leurs adresses afin de préparer une campagne de collecte.
 
